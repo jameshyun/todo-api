@@ -2,13 +2,17 @@
   "name": "9digital",
   "version": "1.0.0",
   "description": "A Backend API Server for 9digital Test",
-  "main": "app.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "James Hyun",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^2.2.21"
+    "body-parser": "^1.16.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21",
+    "mongoose": "^4.7.7"
   }
 }
