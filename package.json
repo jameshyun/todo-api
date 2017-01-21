@@ -1,0 +1,14 @@
+{
+  "name": "9digital",
+  "version": "1.0.0",
+  "description": "A Backend API Server for 9digital Test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Hyun",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.21"
+  }
+}
