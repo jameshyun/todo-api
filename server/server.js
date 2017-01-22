@@ -17,24 +17,25 @@ app.use(bodyParser.json());
 
 // Configure routes
 app.post('/todos', (req, res) => {	
+	// console.log(req.body);
 	var todo = new Todo({
 		text: req.body.text
 	});
 
 	todo.save().then((doc) => {
 		res.send(doc);
-	}). catch((e) => {
+	}).catch((e) => {
 		res.status(400).send(e);
 	});
-
-	// following lines for test
-	// if (req.is('application/json')) {
-	// 	res.send('right format');
-	// } else {
-	// 	res.status(400).send('Bad Request');
-	// }
 });
 
+app.get('/todos', (req, res) => {
+	Todo.find().then((todos) => {
+		res.send({todos})
+	}).catch((e) => {
+		res.status(400).send(e);
+	});
+});
 
 
 
