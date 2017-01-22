@@ -1,3 +1,5 @@
+require('./config/config');
+
 // Library imports
 const _ = require('lodash');
 const express = require('express');
@@ -12,7 +14,7 @@ var {User} = require('./models/user');
 
 // Set up express app
 var app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // middlewares
 app.use(cors());
