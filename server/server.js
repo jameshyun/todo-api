@@ -2,6 +2,7 @@
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser'); // convert json into obj attaching on to the req obj
+var {ObjectID} = require('mongodb');
 
 // Local imports
 var {mongoose} = require('./db/mongoose');
@@ -37,6 +38,25 @@ app.get('/todos', (req, res) => {
 	});
 });
 
+// GET /todos/1234324
+app.get('/todos/:id', (req, res) => {
+	var id = req.params.id;
+
+	// Valid id using isValid
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send(); // send back an empty body with 404 status
+	}
+
+	Todo.findById(id).then((todo) => {
+		if (!todo) {
+			return res.status(404).send();
+		}
+
+		res.send({todo});
+	}).catch((e) => {
+		res.status(400).send();
+	});
+});
 
 
 app.listen(3000, () => {
