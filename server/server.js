@@ -11,6 +11,7 @@ var {User} = require('./models/user');
 
 // Set up express app
 var app = express();
+const port = process.env.PORT || 3000;
 
 // middlewares
 app.use(cors());
@@ -59,9 +60,9 @@ app.get('/todos/:id', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-	console.log('Started on port 3000');
-});;
+app.listen(port, () => {
+	console.log(`Started up at port ${port}`);
+});
 
 module.exports = {app}; // export app to be used in test
 

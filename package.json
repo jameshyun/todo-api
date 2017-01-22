@@ -4,8 +4,12 @@
   "description": "A Backend API Server for 9digital Test",
   "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "mocha server/**/*.test.js",
     "test-watch": "nodemon --exec \"npm test\""
+  },
+  "engine": {
+    "node": "6.9.4"
   },
   "author": "James Hyun",
   "license": "ISC",
