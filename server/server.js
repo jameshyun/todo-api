@@ -110,6 +110,8 @@ app.patch('/todos/:id', (req, res) => {
 
 });
 
+app.use('/*', function(req, res) { res.status(400).send({error: "Unable to handle request"}); }); 
+
 app.listen(port, () => {
 	console.log(`Started up at port ${port}`);
 });
