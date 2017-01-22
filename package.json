@@ -4,7 +4,8 @@
   "description": "A Backend API Server for 9digital Test",
   "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec \"npm test\""
   },
   "author": "James Hyun",
   "license": "ISC",
@@ -14,5 +15,11 @@
     "express": "^4.14.0",
     "mongodb": "^2.2.21",
     "mongoose": "^4.7.7"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1"
   }
 }
